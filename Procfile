@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn sensores.wsgi
+web: gunicorn sensores.wsgi:application
