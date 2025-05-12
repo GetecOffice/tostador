@@ -40,12 +40,7 @@ protobuf==3.20.3
 psycopg2-binary==2.9.6
 PyAutoGUI==0.9.54
 pycparser==2.21
-pydyf==0.6.0
 PyGetWindow==0.0.9
-pyHanko==0.18.1
-pyhanko-certvalidator==0.22.0
-pyinstaller==6.5.0
-pyinstaller-hooks-contrib==2024.3
 pylogix==0.8.11
 pyModbusTCP==0.2.0
 PyMsgBox==1.0.9
@@ -53,7 +48,6 @@ PyMySQL==1.0.3
 pyodbc==4.0.39
 pypdf==3.8.1
 pyperclip==1.8.2
-pyphen==0.14.0
 pypng==0.20220715.0
 PyQt5==5.15.10
 PyQt5-Qt5==5.15.2
@@ -68,12 +62,10 @@ python-snap7==2.0.2
 pytweening==1.2.0
 pytz==2023.3.post1
 qrcode==7.4.2
-reportlab==3.6.13
 requests==2.30.0
 six==1.16.0
 SQLAlchemy==2.0.21
 sqlparse==0.4.4
-svglib==1.5.1
 tinycss2==1.2.1
 typing_extensions==4.5.0
 tzdata==2023.3
@@ -81,7 +73,6 @@ tzlocal==5.0.1
 uritools==4.0.1
 urllib3==2.0.2
 uvicorn==0.23.2
-weasyprint==59.0
 webencodings==0.5.1
 websockets==11.0.3
 whitenoise==6.5.0
