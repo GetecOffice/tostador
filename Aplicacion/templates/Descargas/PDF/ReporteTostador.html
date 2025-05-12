@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Reporte de Tostador</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 10mm;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            page-break-inside: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 2px;
+            text-align: center;
+        }
+
+        th {
+            font-size: 12px;
+        }
+
+        td {
+            font-size: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-info {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        span {
+            font-size: 10px;
+            font-weight: normal;
+        }
+
+        /* @frame footer_frame {
+            -pdf-frame-content: footer_content;
+            left: 50pt;
+            width: 512pt;
+            top: 772pt;
+            height: 20pt;
+        } */
+
+        #footer_content {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-info">
+        <img src="{{ logo_url }}" alt="Logo" class="logo">
+        <h1>Reporte de Tostador</h1>
+        <p><strong>Fecha de generación:</strong> {{ fecha_actual }}</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Folio</th>
+                <th rowspan="2">Tostador</th>
+                <th colspan="4">Tiempo <span>( Segundos )</span></th>
+                <th rowspan="2">Batch</th>
+                <th rowspan="2">Cantidad <br> <span>( Litros ) </span></th>
+                <th rowspan="2">Temperatura <br> <span>( Centigrados )</span></th>
+                <th rowspan="2">Peso <br> <span>( Kilogramos )</span></th>
+                <th rowspan="2">Destino</th>
+                <th rowspan="2">Fecha y Hora</th>
+            </tr>
+            <tr>
+                <th>Inicial</th>
+                <th>Tostado</th>
+                <th>Enfriado</th>
+                <th>Elevado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in datos_tabla %}
+            <tr>
+                <td>F-000{{ item.Folio }}</td>
+                <td>Linea {{ item.NoLinea }} <br>
+                    <!-- {{ item.Operador }} -->
+                      Operador 2
+                </td>
+                <td>{{ item.TmpInicial }} Seg</td>
+                <td>{{ item.TmpTostado }} Seg</td>
+                <td>{{ item.TmpEnfriado }} Seg</td>
+                <td>{{ item.TmpoElevado }} Seg</td>
+                <td>{{ item.BatchVerde }}</td>
+                <td>{{ item.CantAgua }} Lts</td>
+                <td>{{ item.TempCorte }} °C</td>
+                <td>{{ item.PesoTostado }} Kg</td>
+                <td>{{ item.Destino }}</td>
+                <td>{{ item.FechaYHora }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div id="footer_content">
+        Página
+        <pdf:pagenumber /> de
+        <pdf:pagecount />
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+{% extends "include/head.html" %}
+{% load static %}
+{% block title %}PRODUCTOS{% endblock %}
+{% block body %}
+<!--**********************************
+            Content body start
+        ***********************************-->
+<div class="content-body">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-xl-9 col-xxl-9">
+				<div class="card">
+					<div class="card-header d-flex flex-wrap border-0 pb-0">
+						<div class="me-auto mb-sm-0 mb-3">
+							<h4 class="card-title mb-2">Gráfica de temperatura, líneas de producción: tostador
+							</h4>
+							<span class="fs-12">La gráfica se actualiza automaticamente cada 5 segundos</span>
+						</div>
+					</div>
+					<div class="card-body pb-2">
+						<canvas id="chartBar2"></canvas>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-3 col-xxl-3">
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<div class="card card-bx">
+							<h4 class="m-0 p-0" style="text-align: center;">BATCH VERDE</h4>
+							<div class="card-info text-white m-0 p-0">
+								<img class="pattern-img" src="{% static 'images/pattern/cafe.png' %}" alt=""
+									style="margin-top: 20px;">
+								<div class="d-flex align-items-center mt-3 mb-2">
+									<table class="table" id="batch">
+										<thead>
+											<tr>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 1
+												</th>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 2
+												</th>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 3
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-12">
+						<div class="card card-bx">
+							<h4 class="m-0 p-0" style="text-align: center;">CANTIDAD DE AGUA</h4>
+							<div class="card-info text-white  m-0 p-0">
+								<img class="pattern-img" src="{% static 'images/pattern/agua1.png' %}" alt=""
+									style="margin-top: 20px;">
+								<div class="d-flex align-items-center mt-3 mb-2">
+									<table class="table" id="agua">
+										<thead>
+											<tr>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 1
+												</th>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 2
+												</th>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 3
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-12">
+						<div class="card card-bx">
+							<h4 class="m-0 p-0" style="text-align: center;">PESO TOSTADO</h4>
+							<div class="card-info text-white m-0 p-0">
+								<img class="pattern-img" src="{% static 'images/pattern/cafe.png' %}" alt=""
+									style="margin-top: 20px;">
+								<div class="d-flex align-items-center mt-3 mb-2">
+									<table class="table" id="peso">
+										<thead>
+											<tr>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 1
+												</th>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 2
+												</th>
+												<th class="fs-16 mb-0 text-black m-0 pb-1 pt-0" scope="col">Linea 3
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="padding-right: 0 !important;">
+				<div class="col-sm-12 col-xl-12 col-xxl-12" style="padding-right: 0 !important;">
+					<div class="card">
+						<div class="card-header d-block d-sm-flex border-0">
+							<div class="me-3">
+								<h4 class="card-title mb-2">Recolección de datos, linea de producción: tostador
+								</h4>
+								<span class="fs-12">En la siguiente tabla se mostrara los datos recolectados del
+									PLC instalados en cada linea de producción. Los datos de la siguiente tabla se
+									actualizan automaticamente cada 5 segundos</span>
+							</div>
+						</div>
+
+						<div class="card-body tab-content p-0">
+							<div class="tab-pane active show fade" id="monthly" role="tabpanel">
+								<div class="table-responsive">
+									<table class="table table-responsive-md card-table transactions-table" id="miTabla">
+										<thead>
+											<tr>
+												<th class="text-black fs-16 font-w600 th-responsive">
+													FOLIO
+												</th>
+												<th class="text-black fs-16 font-w600 th-responsive">
+													TOSTADOR
+												</th>
+												<th class="text-black fs-16 font-w600 th-responsive" colspan="2">
+													TIEMPO
+												</th>
+												<th class="text-black fs-16 font-w600 th-responsive" rowspan="2">
+													BATCH
+													<br> VERDE
+												</th>
+												<th class="text-black fs-16 font-w600 th-responsive" rowspan="2">
+													CANTIDAD <br> AGUA
+												</th>
+												<th class="text-black fs-16 font-w600 th-responsive" rowspan="2">
+													TEMPERATURA <br> CORTE
+												</th>
+												<th class="text-black fs-16 font-w600 th-responsive" rowspan="2">
+													PESO
+													<br> TOSTADO
+												</th>
+												<th class="text-black fs-16 font-w600 th-responsive">
+													DESTINO
+												</th>
+												<th class="text-black fs-16 font-w600 th-responsive" rowspan="2">
+													FECHA Y
+													<br> HORA
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!--**********************************
+            Content body end
+***********************************-->
+{% endblock %}

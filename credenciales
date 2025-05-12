@@ -1,0 +1,12 @@
+git config --global user.name "GetecOffice"
+git config --global user.email "getec.plc@gmail.com"
+
+
+
+echo "# tostador" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/GetecOffice/tostador.git
+git push -u origin main
