@@ -18,6 +18,7 @@ django-crispy-forms==2.3
 django-extensions==3.2.3
 et-xmlfile==1.1.0
 fontawesomefree==6.5.1
+cffi==1.14.6
 fonttools==4.39.4
 freetype-py==2.3.0
 # greenlet==2.0.2        # Comentado: solo necesario si usas SQLAlchemy con async
@@ -38,7 +39,7 @@ pefile==2023.2.7
 # Pillow==9.5.0          # Comentado: si no procesas imágenes directamente
 protobuf==3.20.3
 psycopg2-binary==2.9.6
-PyAutoGUI==0.9.54
+# PyAutoGUI==0.9.54
 pycparser==2.21
 PyGetWindow==0.0.9
 pylogix==0.8.11
