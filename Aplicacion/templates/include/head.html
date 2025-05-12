@@ -105,75 +105,87 @@
                                 Dashboard
                             </div>
                         </div>
-                        <div class=" card-header d-block d-sm-flex border-0 pb-3 pt-0 m-0 "
-                            style="justify-content: center; align-items: center; text-align: center;">
-                            <div class="card-tabs mt-3 mt-sm-0">
-                                <form action="{% url 'T_Tostador' %}" method="POST">
-                                    {% csrf_token %}
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item">
-                                            {% if data.Filtro == 40 %}
-                                            <button type="submit" name="filtro" value="40" class="nav-link active"
-                                                data-bs-toggle="tab" role="tab">General</button>
-                                            {% else %}
-                                            <button type="submit" name="filtro" value="40" class="nav-link"
-                                                data-bs-toggle="tab" role="tab">General</button>
-                                            {% endif %}
-                                        </li>
-                                        <li class="nav-item">
-                                            {% if data.Filtro == 30 %}
-                                            <button type="submit" name="filtro" value="30" class="nav-link active"
-                                                data-bs-toggle="tab" role="tab">Mensual</button>
-                                            {% else %}
-                                            <button type="submit" name="filtro" value="30" class="nav-link"
-                                                data-bs-toggle="tab" role="tab">Mensual</button>
-                                            {% endif %}
-                                        </li>
-                                        <li class="nav-item">
-                                            {% if data.Filtro == 7 %}
-                                            <button type="submit" name="filtro" value="7" class="nav-link active"
-                                                data-bs-toggle="tab" role="tab">Semanal</button>
-                                            {% else %}
-                                            <button type="submit" name="filtro" value="7" class="nav-link"
-                                                data-bs-toggle="tab" role="tab">Semanal</button>
-                                            {% endif %}
-                                        </li>
-                                        <li class="nav-item">
-                                            {% if data.Filtro == 1 %}
-                                            <button type="submit" name="filtro" value="1" class="nav-link active"
-                                                data-bs-toggle="tab" role="tab">Ahora</button>
-                                            {% else %}
-                                            <button type="submit" name="filtro" value="1" class="nav-link"
-                                                data-bs-toggle="tab" role="tab">Ahora</button>
-                                            {% endif %}
-                                        </li>
-                                    </ul>
-                                </form>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-5 ">
+                                <div class=" card-header d-block d-sm-flex border-0 pb-3 pt-0 m-0 "
+                                    style="justify-content: center; align-items: center; text-align: center;">
+                                    <div class="card-tabs mt-3 mt-sm-0">
+                                        <form action="{% url 'T_Tostador' %}" method="POST">
+                                            {% csrf_token %}
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    {% if data.Filtro == 40 %}
+                                                    <button type="submit" name="filtro" value="40"
+                                                        class="nav-link active" data-bs-toggle="tab"
+                                                        role="tab">General</button>
+                                                    {% else %}
+                                                    <button type="submit" name="filtro" value="40" class="nav-link"
+                                                        data-bs-toggle="tab" role="tab">General</button>
+                                                    {% endif %}
+                                                </li>
+                                                <li class="nav-item">
+                                                    {% if data.Filtro == 30 %}
+                                                    <button type="submit" name="filtro" value="30"
+                                                        class="nav-link active" data-bs-toggle="tab"
+                                                        role="tab">Mensual</button>
+                                                    {% else %}
+                                                    <button type="submit" name="filtro" value="30" class="nav-link"
+                                                        data-bs-toggle="tab" role="tab">Mensual</button>
+                                                    {% endif %}
+                                                </li>
+                                                <li class="nav-item">
+                                                    {% if data.Filtro == 7 %}
+                                                    <button type="submit" name="filtro" value="7"
+                                                        class="nav-link active" data-bs-toggle="tab"
+                                                        role="tab">Semanal</button>
+                                                    {% else %}
+                                                    <button type="submit" name="filtro" value="7" class="nav-link"
+                                                        data-bs-toggle="tab" role="tab">Semanal</button>
+                                                    {% endif %}
+                                                </li>
+                                                <li class="nav-item">
+                                                    {% if data.Filtro == 1 %}
+                                                    <button type="submit" name="filtro" value="1"
+                                                        class="nav-link active" data-bs-toggle="tab"
+                                                        role="tab">Ahora</button>
+                                                    {% else %}
+                                                    <button type="submit" name="filtro" value="1" class="nav-link"
+                                                        data-bs-toggle="tab" role="tab">Ahora</button>
+                                                    {% endif %}
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-7">
+                                <ul class="navbar-nav header-right ocultar">
+                                    <li class="nav-item">
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary d-sm-inline-block d-none dropdown-toggle"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-download scale5 me-3"></i>Descargar reporte</a>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item text-black"
+                                                        href="{% url 'descargar_excel' %}">Archivo Excel</a>
+                                                </li>
+                                                <li><a class="dropdown-item text-black"
+                                                        href="{% url 'descargar_pdf' %}">Archivo
+                                                        PDF</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item ocultar">
+                                        <a href="javascript:void(0);"
+                                            class="btn btn-primary d-sm-inline-block d-none">Generate
+                                            Report<i class="las la-signal ms-3 scale5"></i></a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="navbar-nav header-right ocultar">
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-primary d-sm-inline-block d-none dropdown-toggle"
-                                        type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="las la-download scale5 me-3"></i>Descargar reporte</a>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item text-black"
-                                                href="{% url 'descargar_excel' %}">Archivo Excel</a>
-                                        </li>
-                                        <li><a class="dropdown-item text-black" href="{% url 'descargar_pdf' %}">Archivo
-                                                PDF</a></li>
-                                    </ul>
-                                </div>
-                            </li>
 
 
-                            <li class="nav-item ocultar">
-                                <a href="javascript:void(0);" class="btn btn-primary d-sm-inline-block d-none">Generate
-                                    Report<i class="las la-signal ms-3 scale5"></i></a>
-                            </li>
-                        </ul>
                     </div>
                 </nav>
             </div>
