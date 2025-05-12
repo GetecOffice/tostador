@@ -17,10 +17,56 @@
 							</h4>
 							<span class="fs-12">La gráfica se actualiza automaticamente cada 5 segundos</span>
 						</div>
-					</div>
-					<div class="card-body pb-2">
-						<canvas id="chartBar2"></canvas>
 
+						<div class=" card-header d-block d-sm-flex border-0 pb-3 pt-0 m-0 "
+							style="justify-content: center; align-items: center; text-align: center;">
+							<div class="card-tabs mt-3 mt-sm-0">
+								<form action="{% url 'T_Tostador' %}" method="POST">
+									{% csrf_token %}
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											{% if data.Filtro == 40 %}
+											<button type="submit" name="filtro" value="40" class="nav-link active"
+												data-bs-toggle="tab" role="tab">General</button>
+											{% else %}
+											<button type="submit" name="filtro" value="40" class="nav-link"
+												data-bs-toggle="tab" role="tab">General</button>
+											{% endif %}
+										</li>
+										<li class="nav-item">
+											{% if data.Filtro == 30 %}
+											<button type="submit" name="filtro" value="30" class="nav-link active"
+												data-bs-toggle="tab" role="tab">Mensual</button>
+											{% else %}
+											<button type="submit" name="filtro" value="30" class="nav-link"
+												data-bs-toggle="tab" role="tab">Mensual</button>
+											{% endif %}
+										</li>
+										<li class="nav-item">
+											{% if data.Filtro == 7 %}
+											<button type="submit" name="filtro" value="7" class="nav-link active"
+												data-bs-toggle="tab" role="tab">Semanal</button>
+											{% else %}
+											<button type="submit" name="filtro" value="7" class="nav-link"
+												data-bs-toggle="tab" role="tab">Semanal</button>
+											{% endif %}
+										</li>
+										<li class="nav-item">
+											{% if data.Filtro == 1 %}
+											<button type="submit" name="filtro" value="1" class="nav-link active"
+												data-bs-toggle="tab" role="tab">Ahora</button>
+											{% else %}
+											<button type="submit" name="filtro" value="1" class="nav-link"
+												data-bs-toggle="tab" role="tab">Ahora</button>
+											{% endif %}
+										</li>
+									</ul>
+								</form>
+							</div>
+						</div>
+						<div class="card-body pb-2">
+							<canvas id="chartBar2"></canvas>
+						</div>
 					</div>
 				</div>
 			</div>
