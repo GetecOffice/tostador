@@ -37,7 +37,7 @@ pandas==2.1.2
 pefile==2023.2.7
 # Pillow==9.5.0          # Comentado: si no procesas imágenes directamente
 protobuf==3.20.3
-psycopg2-binary==2.9.6
+psycopg2-binary==2.9.9
 # PyAutoGUI==0.9.54
 pycparser==2.21
 PyGetWindow==0.0.9
